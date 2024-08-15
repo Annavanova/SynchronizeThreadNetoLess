@@ -29,8 +29,8 @@ public class Main {
 
         for (int i = 0; i < THREADS_COUNT; i++) {
             Thread textThread = new Thread(() -> {
-                String textGenerate = generateText("abaca", 100);
-                int countCharIntext = (int) textGenerate.chars().filter(ch -> ch == 'a').count();
+                String textGenerate = generateText("RLRFR", 100);
+                int countCharIntext = (int) textGenerate.chars().filter(ch -> ch == 'R').count();
                 //System.out.println(textGenerate + " -> " + countCharIntext);
                 synchronized (sizeToFreq) {
                     if (sizeToFreq.containsKey(countCharIntext)) {
